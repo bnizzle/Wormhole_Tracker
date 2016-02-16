@@ -22,6 +22,9 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'therubyracer'  # If using Ruby
+gem 'therubyrhino'  # If using JRuby
+gem 'less-rails-bootstrap'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -33,8 +36,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem 'rspec-rails', '3.2.3'
+  gem 'guard-rspec', require: false
+  gem 'spring-commands-rspec'
 end
 
 group :development do
@@ -45,3 +49,6 @@ group :development do
   gem 'spring'
 end
 
+group :test do
+  gem 'capybara', '2.4.4'
+end
